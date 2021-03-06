@@ -1,38 +1,236 @@
+html {
+  --color-text: black;
+  --color-background: #b8bdb6;
+  --color-primary: rebeccapurple;
+  --gutter: 16px;
+}
+
 .App {
-  text-align: center;
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 640px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-background);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.settings {
+  display: flex;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navigation {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navigation--list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.navigation--item {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.mainScreen { 
+  flex-grow: 1;
+  padding-top: 25px;
+  padding-bottom: 35px;
+}
+
+/* home */
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+}
+
+.scoresTable {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.home td,
+.home th {
+  width: 100px;
+  text-align: center;
+}
+
+.home td:first-of-type,
+.home th:first-of-type { 
+  display: block;
+  overflow-y: auto;
+  width: 140px;
+  padding-left: 4px;
+  text-align: left;
+}
+
+.home tr {
+  border-bottom: 2px solid #d1d1d1;
+}
+
+.home tbody {
+  background-color: rgb(216, 216, 216);
+}
+
+.nameWrapper {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.nameText {
+  margin-right: 15px;
+  padding-left: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nameInput {
+  width: 120px;
+  font-size: 22px;
+  color: #28363D;
+  background: none;
+  border: none;
+  padding: 2px;
+  padding-left: 4px;
+  border-bottom: solid 1px #28363D
+}
+
+.nameInput:hover,
+.nameInput:focus {
+  background-color: #d8d8d8;
+  outline: solid 1px #28363D;
+}
+
+.nameInput__empty {
+
+}
+
+.footer {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-background);
+  font-size: 18px;
+}
+
+.footer a {
+  font-size: 18px;
+}
+
+.logo {
+  width: 70px;
+}
+
+/* Game */
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-background);
+}
+
+.scoresRow {
+  display: flex;
+  align-items: center;
+}
+
+.scores {
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.player {
+  margin: 0;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  
+  overflow-y: auto;
+  width: 120px;
+}
+
+.playerActive {
+  outline: 4px solid whitesmoke;
+}
+
+
+.gameRow {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.board {
+  background-color: rgb(199, 199, 199);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.boardRow {
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.boardRow:last-of-type {
+  margin-bottom: 0;
+}
+
+.boardCell {
+  width: 75px;
+  height: 75px;
+  margin: 0;
+  margin-right: 6px;
+  padding: 0;
+  border: none;
+  background: whitesmoke;
+  font-size: 32px;
+  color: #1e4b52;
+  
+}
+
+.boardCell:active,
+.boardCell:focus {
+  outline: none;
+}
+
+.boardCell:last-of-type {
+  margin-right: 0;
+}
+
+.highlightedCell {
+  /* background-color: rgb(255, 184, 155); */
+}
+
+.hotkeyCell {
+  border: rgb(0, 0, 0) 5px solid;
+}
+
+
+.gameControls > button {
+  height: 50px;
+  width: 140px;
+  display: block;
+  font-size: 18px;
+  border: none;
+  margin-bottom: 15px;
 }
